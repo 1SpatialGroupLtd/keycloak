@@ -28,7 +28,21 @@
     <artifactId>keycloak-saml-wildfly-subsystem</artifactId>
     <name>Keycloak Wildfly SAML Adapter Subsystem</name>
     <description>Keycloak Wildfly SAML Adapter Subsystem</description>
+    <version>26.3.2.1</version>
     <packaging>jar</packaging>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Internal Releases</name>
+            <url>http://mavenrepo.1spatial.local/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Internal Releases</name>
+            <url>http://mavenrepo.1spatial.local/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <plugins>
@@ -105,12 +119,12 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-saml-adapter-core</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-saml-wildfly-elytron-adapter</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 </project>
